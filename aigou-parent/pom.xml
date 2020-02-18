@@ -15,6 +15,7 @@
         <module>aigou-eureka</module>
         <module>aigou-common</module>
         <module>aigou-common-db</module>
+        <module>aigou-service</module>
     </modules>
 
 
@@ -56,6 +57,19 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.6.1</version>
         </dependency>
+
+        <!--实用工具 2020-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
+        <!--实用工具 2020-->
+
 
         <!--
             http://localhost:9011/swagger-ui.html
