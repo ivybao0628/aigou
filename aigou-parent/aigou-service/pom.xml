@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>aigou-service-goods</module>
+        <module>aigou-service-file</module>
     </modules>
     <artifactId>aigou-service</artifactId>
     <description>

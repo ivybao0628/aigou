@@ -22,7 +22,7 @@ import java.net.NetworkInterface;
  *
  * @author Polim
  */
-public class IdWorker {
+public class IdWorker implements Cloneable{
     // 时间起始标记点，作为基准，一般取系统的最近时间（一旦确定不能变动）
     private final static long twepoch = 1288834974657L;
     // 机器标识位数
@@ -163,9 +163,10 @@ public class IdWorker {
     public static void main(String[] args) {
         //推特  26万个不重复的ID
         IdWorker idWorker = new IdWorker(0,0);
-        for (int i = 0; i <1000000 ; i++) {
+        for (int i = 0; i <100 ; i++) {
            System.out.println(idWorker.nextId());
         }
     }
+
 
 }
