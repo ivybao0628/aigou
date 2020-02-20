@@ -9,7 +9,7 @@ import java.io.Serializable;
 import ${set};
 </#list>
 /****
- * @Author: chenfu
+ * @Author:shenkunlin
  * @Description:${Table}构建
  * @Date 2019/6/14 19:13
  *****/

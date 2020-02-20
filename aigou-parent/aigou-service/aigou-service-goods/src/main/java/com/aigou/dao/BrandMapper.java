@@ -1,13 +1,11 @@
 package com.aigou.dao;
-
 import com.aigou.goods.pojo.Brand;
 import tk.mybatis.mapper.common.Mapper;
 
-/**
- * 继承tk.mybatis.mapper
- * 继承方便进行单表的CRUD
- * @author anchao
- * @date 2020/2/18 16:38
- */
+/****
+ * @Author:shenkunlin
+ * @Description:Brand的Dao
+ * @Date 2019/6/14 0:12
+ *****/
 public interface BrandMapper extends Mapper<Brand> {
 }

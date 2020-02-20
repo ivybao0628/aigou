@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /****
- * @Author: chenfu
+ * @Author:shenkunlin
  * @Description:
  * @Date 2019/6/18 13:58
  *****/
