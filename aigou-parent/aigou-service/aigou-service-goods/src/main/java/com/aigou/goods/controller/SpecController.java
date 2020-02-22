@@ -25,6 +25,17 @@ public class SpecController {
     @Autowired
     private SpecService specService;
 
+
+    /**
+     * 根据分类ID查询规格集合信息
+     */
+    @GetMapping(value = "/category/{id}")
+    public Result<List<Spec>> findByCategoryId(@PathVariable(value = "id")Integer categoryid){
+        List<Spec> byCategory = specService.findByCategory(categoryid);
+       return new Result<List<Spec>>(true,StatusCode.OK,"查询成功",byCategory);
+    }
+
+
     /***
      * Spec分页条件搜索实现
      * @param spec

@@ -1,5 +1,6 @@
 package com.aigou.goods.dao;
 import com.aigou.goods.pojo.Album;
+import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
 /****
@@ -7,5 +8,6 @@ import tk.mybatis.mapper.common.Mapper;
  * @Description:Album的Dao
  * @Date 2019/6/14 0:12
  *****/
+@Repository(value = "albumMapper")
 public interface AlbumMapper extends Mapper<Album> {
 }

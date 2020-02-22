@@ -1,6 +1,8 @@
 package com.aigou.goods.service.impl;
 
+import com.aigou.goods.dao.CategoryMapper;
 import com.aigou.goods.dao.SpecMapper;
+import com.aigou.goods.pojo.Category;
 import com.aigou.goods.pojo.Spec;
 import com.aigou.goods.service.SpecService;
 import com.github.pagehelper.PageHelper;
@@ -23,6 +25,19 @@ public class SpecServiceImpl implements SpecService {
     @Autowired
     private SpecMapper specMapper;
 
+    @Autowired
+    private CategoryMapper categoryMapper;
+
+    @Override
+    public List<Spec> findByCategory(Integer categoryId) {
+
+        Category category = categoryMapper.selectByPrimaryKey(categoryId);
+
+        Spec spec = new Spec();
+        spec.setTemplateId(category.getTemplateId());
+
+        return specMapper.select(spec);
+    }
 
     /**
      * Spec条件+分页查询

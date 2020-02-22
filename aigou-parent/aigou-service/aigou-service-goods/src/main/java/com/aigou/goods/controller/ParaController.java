@@ -25,6 +25,16 @@ public class ParaController {
     @Autowired
     private ParaService paraService;
 
+    /**
+     * 根据分类ID查询参数集合
+     */
+    @GetMapping(value = "/category/{id}")
+    public Result<List<Para>> getByCategoryId(@PathVariable(value = "id")Integer id){
+        List<Para> byCategory = paraService.findByCategory(id);
+        return new Result<>(true,StatusCode.OK,"查询成功",byCategory);
+
+    }
+
     /***
      * Para分页条件搜索实现
      * @param para
@@ -41,7 +51,7 @@ public class ParaController {
     public Result<PageInfo> findPage(@RequestBody(required = false) @ApiParam(name = "Para对象",value = "传入JSON数据",required = false) Para para, @PathVariable  int page, @PathVariable  int size){
         //调用ParaService实现分页条件查询Para
         PageInfo<Para> pageInfo = paraService.findPage(para, page, size);
-        return new Result(true,StatusCode.OK,"查询成功",pageInfo);
+        return new Result<>(true,StatusCode.OK,"查询成功",pageInfo);
     }
 
     /***

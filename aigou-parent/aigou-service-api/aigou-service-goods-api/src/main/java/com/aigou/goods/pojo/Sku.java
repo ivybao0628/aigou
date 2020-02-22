@@ -2,6 +2,7 @@ package com.aigou.goods.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ import java.util.Date;
  * @Date 2019/6/14 19:13
  *****/
 @ApiModel(description = "Sku",value = "Sku")
+@ToString
 @Table(name="tb_sku")
 public class Sku implements Serializable{
 

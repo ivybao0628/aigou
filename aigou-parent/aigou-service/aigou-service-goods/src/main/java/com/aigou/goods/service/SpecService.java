@@ -12,6 +12,11 @@ import java.util.List;
  *****/
 public interface SpecService {
 
+    /**
+     * 分类ID->template_id,根据template_id查询规格集合
+     */
+    List<Spec> findByCategory(Integer categoryId);
+
     /***
      * Spec多条件分页查询
      * @param spec

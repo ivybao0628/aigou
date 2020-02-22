@@ -25,6 +25,16 @@ public class BrandServiceImpl implements BrandService {
 
 
     /**
+     * 根据分类Id查询品牌集合
+     * @param categoryId
+     * @return
+     */
+    @Override
+    public List<Brand> findByCategory(Integer categoryId) {
+        return brandMapper.findByCategory(categoryId);
+    }
+
+    /**
      * Brand条件+分页查询
      * @param brand 查询条件
      * @param page 页码

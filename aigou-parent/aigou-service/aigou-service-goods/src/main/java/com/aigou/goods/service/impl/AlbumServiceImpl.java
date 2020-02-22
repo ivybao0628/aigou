@@ -5,11 +5,11 @@ import com.aigou.goods.pojo.Album;
 import com.aigou.goods.service.AlbumService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /****
@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class AlbumServiceImpl implements AlbumService {
 
-    @Autowired
+    @Resource(name = "albumMapper")
     private AlbumMapper albumMapper;
 
 

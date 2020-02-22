@@ -1,6 +1,8 @@
 package com.aigou.goods.service.impl;
 
+import com.aigou.goods.dao.CategoryMapper;
 import com.aigou.goods.dao.ParaMapper;
+import com.aigou.goods.pojo.Category;
 import com.aigou.goods.pojo.Para;
 import com.aigou.goods.service.ParaService;
 import com.github.pagehelper.PageHelper;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /****
@@ -23,6 +26,17 @@ public class ParaServiceImpl implements ParaService {
     @Autowired
     private ParaMapper paraMapper;
 
+    @Resource
+    private CategoryMapper categoryMapper;
+
+
+    @Override
+    public List<Para> findByCategory(Integer categoryId) {
+        Category category = categoryMapper.selectByPrimaryKey(categoryId);
+        Para para = new Para();
+        para.setTemplateId(category.getTemplateId());
+        return paraMapper.select(para);
+    }
 
     /**
      * Para条件+分页查询

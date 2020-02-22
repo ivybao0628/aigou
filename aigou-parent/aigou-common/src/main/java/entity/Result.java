@@ -1,6 +1,5 @@
 package entity;
 
-import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -21,11 +20,11 @@ public class Result<T> {
     @ApiModelProperty(value="逻辑数据",required = true)
     private T data;//返回数据
 
-    public Result(boolean flag, Integer code, String message, Object data) {
+    public Result(boolean flag, Integer code, String message, T data) {
         this.flag = flag;
         this.code = code;
         this.message = message;
-        this.data = (T) data;
+        this.data = data;
     }
 
     public Result(boolean flag, Integer code, String message) {

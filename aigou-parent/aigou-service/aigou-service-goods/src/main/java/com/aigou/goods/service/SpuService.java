@@ -1,5 +1,6 @@
 package com.aigou.goods.service;
 
+import com.aigou.goods.pojo.Goods;
 import com.aigou.goods.pojo.Spu;
 import com.github.pagehelper.PageInfo;
 
@@ -11,6 +12,60 @@ import java.util.List;
  * @Date 2019/6/14 0:16
  *****/
 public interface SpuService {
+
+
+    /***
+     * 还原被删除商品
+     * @param spuId
+     */
+    void restore(Long spuId);
+
+
+    /***
+     * 逻辑删除
+     * @param spuId
+     */
+    void logicDelete(Long spuId);
+
+    /**
+     * 批量上架
+     * @param ids
+     * @return
+     */
+    int putMany(Long[] ids);
+
+
+
+    /***
+     * 商品上架
+     * @param spuId
+     */
+    void put(Long spuId);
+
+
+    /***
+     * 商品下架
+     * @param spuId
+     */
+    void pull(Long spuId);
+
+    /***
+     * 商品审核
+     * @param spuId
+     */
+    void audit(Long spuId);
+
+
+    /**
+     * 根据SPU的ID查找SPU以及对应的SKU集合
+     */
+    Goods findGoodsById(Long spuId);
+
+
+    /**
+     * 商品添加
+     */
+    void saveGoods(Goods goods);
 
     /***
      * Spu多条件分页查询

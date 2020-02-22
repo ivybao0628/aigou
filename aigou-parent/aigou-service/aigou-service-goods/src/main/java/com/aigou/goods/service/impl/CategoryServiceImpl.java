@@ -5,24 +5,32 @@ import com.aigou.goods.pojo.Category;
 import com.aigou.goods.service.CategoryService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /****
- * @Author:shenkunlin
+ * @Author:anchao
  * @Description:Category业务层接口实现类
- * @Date 2019/6/14 0:16
+ * @Date 2020
  *****/
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
+    @Resource
     private CategoryMapper categoryMapper;
 
+
+    @Override
+    public List<Category> findByParentId(Integer pid) {
+        //根据父级ID查询
+        Category category = new Category();
+        category.setParentId(pid);
+        return categoryMapper.select(category);
+    }
 
     /**
      * Category条件+分页查询

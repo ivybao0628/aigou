@@ -25,6 +25,16 @@ public class BrandController {
     @Autowired
     private BrandService brandService;
 
+    /**
+     * 根据分类ID查询品牌集合-分类Id
+     */
+    @GetMapping(value = "category/{id}")
+    public Result<List<Brand>> findByCategory(@PathVariable(value = "id")Integer id){
+        List<Brand> byCategory = brandService.findByCategory(id);
+        return new Result<>(true,StatusCode.OK,"查询成功",byCategory);
+    }
+
+
     /***
      * Brand分页条件搜索实现
      * @param brand
@@ -41,7 +51,7 @@ public class BrandController {
     public Result<PageInfo> findPage(@RequestBody(required = false) @ApiParam(name = "Brand对象",value = "传入JSON数据",required = false) Brand brand, @PathVariable  int page, @PathVariable  int size){
         //调用BrandService实现分页条件查询Brand
         PageInfo<Brand> pageInfo = brandService.findPage(brand, page, size);
-        return new Result(true,StatusCode.OK,"查询成功",pageInfo);
+        return new Result<>(true,StatusCode.OK,"查询成功",pageInfo);
     }
 
     /***
