@@ -1,5 +1,7 @@
 #爱购电商工程
 
+maven聚合工程
+
 1 springcloud tkmybatis
 
 2 lua openresty canal
