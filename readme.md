@@ -1,6 +1,6 @@
-#爱购电商工程
+#爱购电商
 
-maven聚合工程
+MAVEN 聚合工程
 
 1 springcloud tkmybatis
 
