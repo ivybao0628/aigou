@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**实现mysql 数据库数据变更 监听
  * @author anchao
@@ -44,8 +43,6 @@ public class CanalDataEventListener {
         List<Content> data = categoryresut.getData();
         //3.使用redisTemplate存储到redis中
         stringRedisTemplate.boundValueOps("content_" + categoryId).set(JSON.toJSONString(data));
-        //1天过期
-        stringRedisTemplate.boundValueOps("content_" + categoryId).expire(1, TimeUnit.DAYS);
     }
 
 

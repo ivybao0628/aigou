@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @date 2020/2/18 20:58
  */
 @EnableEurekaClient
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class,scanBasePackages = {"com.aigou.*"})
 public class FileApplication {
 
     public static void main(String[] args) {

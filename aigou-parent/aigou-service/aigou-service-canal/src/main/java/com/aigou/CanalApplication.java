@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author anchao
  * @date 2020/2/22 15:31
  */
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class},scanBasePackages = {"com.aigou.*"})
 @EnableEurekaClient
 @EnableCanalClient
 @EnableFeignClients(basePackages = {"com.aigou.content.feign"})

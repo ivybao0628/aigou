@@ -1,4 +1,4 @@
-package com.aigou.framework.exception;
+package com.aigou.exception;
 
 import entity.Result;
 import entity.StatusCode;
@@ -21,7 +21,7 @@ public class BaseExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public Result error(Exception e) {
-        e.printStackTrace();
+        System.out.println("进入通用异常处理--------->");
         return new Result(false, StatusCode.ERROR, e.getMessage());
     }
 }

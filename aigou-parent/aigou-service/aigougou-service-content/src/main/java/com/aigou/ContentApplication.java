@@ -13,7 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @package com.changgou *
  * @since 1.0
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.aigou.*"})
 @EnableEurekaClient
 @MapperScan(basePackages = {"com.aigou.content.dao"})
 public class ContentApplication {

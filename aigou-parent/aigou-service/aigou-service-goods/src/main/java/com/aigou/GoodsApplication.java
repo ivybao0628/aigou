@@ -11,7 +11,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author anchao
  * @date 2020/2/18 14:31
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.aigou.*"})
 @EnableEurekaClient  //开启Eureka客户端
 @MapperScan(basePackages = {"com.aigou.goods.dao"}) //tk mybatis 包扫描
 public class GoodsApplication {
