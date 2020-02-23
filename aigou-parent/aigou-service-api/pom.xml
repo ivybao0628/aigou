@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>aigou-service-goods-api</module>
+        <module>aigou-service-content-api</module>
     </modules>
 
     <artifactId>aigou-service-api</artifactId>

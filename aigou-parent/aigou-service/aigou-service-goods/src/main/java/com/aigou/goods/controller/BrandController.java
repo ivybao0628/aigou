@@ -149,7 +149,7 @@ public class BrandController {
      */
     @ApiOperation(value = "查询所有Brand",notes = "查询所Brand有方法详情",tags = {"BrandController"})
     @GetMapping
-    public Result<List<Brand>> findAll(){
+    public Result<List<Brand>> findAll() throws InterruptedException {
         //调用BrandService实现查询所有Brand
         List<Brand> list = brandService.findAll();
         return new Result<List<Brand>>(true, StatusCode.OK,"查询成功",list) ;
