@@ -21,7 +21,7 @@ public class SkuInfo implements Serializable {
     @Id
     private Long id;
 
-    //SKU名称
+    //SKU名称 ik_smart ik_max_word
     @Field(type = FieldType.Text, analyzer = "ik_smart",searchAnalyzer = "ik_smart")
     private String name;
 
