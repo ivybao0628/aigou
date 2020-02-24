@@ -10,4 +10,6 @@ MAVEN 聚合工程
 
 4 kibana  elasticsearch
 
-5 fastdfs
+5 fastdfs thymeleaf
+
+6 

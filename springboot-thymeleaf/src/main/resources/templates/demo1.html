@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf的入门案例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+
+<!---->
+<div th:text="${message}"></div>
+
+<!--表单提交-->
+<form id="login-form" th:action="@{/test/hello}">
+    <button>提交</button>
+</form>
+
+<!--页面遍历取值-->
+<table>
+    <tr>
+        <td>下标</td>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>住址</td>
+    </tr>
+    <tr th:each="user,userStat:${users}">
+        <td>
+            下标:<span th:text="${userStat.index}"></span>,
+        </td>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.address}"></td>
+    </tr>
+</table>
+
+<!--Map取值-->
+<div>
+    dataMap.No===<span th:text="${dataMap.No}"></span>
+    dataMap.address===<span th:text="${dataMap.address}"></span>
+</div>
+
+
+
+<div th:each="map,mapStat:${dataMap}">
+    <div th:text="${map}"></div>
+    key:<span th:text="${mapStat.current.key}"></span><br/>
+    value:<span th:text="${mapStat.current.value}"></span><br/>
+    ==============================================
+</div>
+
+<!--数组取值-->
+<div th:each="nm,nmStat:${names}">
+    <span th:text="${nmStat.count}"></span><span th:text="${nm}"></span>
+    ==============================================
+</div>
+
+<!--日期-->
+<div>
+    <span th:text="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"></span>
+</div>
+
+<!--if条件-->
+<div>
+    <span th:if="${(age>=18)}">成年人</span>
+    <span th:unless="${age<18}">未成年</span>
+</div>
+
+
+<!--引入模块 页面名称::模块名-->
+<div>
+
+    <div id="A" th:include="footer::copy"></div>
+
+</div>
+
+
+
+
+</body>
+</html>
